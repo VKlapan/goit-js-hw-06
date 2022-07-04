@@ -2,7 +2,6 @@ const nameInputEl = document.querySelector("#name-input");
 const nameOutputEl = document.querySelector("#name-output");
 
 const handlerInputName = (event) => {
-  console.log(event.currentTarget.value);
   event.currentTarget.value === ""
     ? (nameOutputEl.textContent = "Anonymus")
     : (nameOutputEl.textContent = event.currentTarget.value);
