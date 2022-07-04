@@ -13,13 +13,13 @@ const createBoxes = () => {
   const amount = inputEl.value;
   const divArray = [];
 
-  for (let i = 0; i < amount; i += 1) {
+  for (let i = 1; i <= amount; i += 1) {
     const divEl = document.createElement("div");
-    divSize += i * 10;
     divEl.style.width = `${divSize}px`;
     divEl.style.height = `${divSize}px`;
     divEl.style.backgroundColor = getRandomHexColor();
     divArray.push(divEl);
+    divSize += i * 10;
   }
   boxesEl.append(...divArray);
   inputEl.value = "";
@@ -27,6 +27,7 @@ const createBoxes = () => {
 
 const destroyBoxes = () => {
   boxesEl.innerHTML = "";
+  divSize = 30;
 };
 
 buttonCreateEl.addEventListener("click", createBoxes);
