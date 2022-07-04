@@ -7,13 +7,17 @@ const buttonCreateEl = document.querySelector("[data-create]");
 const buttonDestroyEl = document.querySelector("[data-destroy]");
 const boxesEl = document.querySelector("#boxes");
 
+let divSize = 30;
+
 const createBoxes = () => {
   const amount = inputEl.value;
   const divArray = [];
+
   for (let i = 0; i < amount; i += 1) {
     const divEl = document.createElement("div");
-    divEl.style.width = `${30 + i * 10}px`;
-    divEl.style.height = `${30 + i * 10}px`;
+    divSize += i * 10;
+    divEl.style.width = `${divSize}px`;
+    divEl.style.height = `${divSize}px`;
     divEl.style.backgroundColor = getRandomHexColor();
     divArray.push(divEl);
   }

@@ -1,7 +1,7 @@
 const validationInputEl = document.querySelector("#validation-input");
 
 const inputValidation = (event) => {
-  event.currentTarget.value.length >=
+  event.currentTarget.value.length ===
   Number.parseInt(validationInputEl.getAttribute("data-length"))
     ? (validationInputEl.className = "valid")
     : (validationInputEl.className = "invalid");
